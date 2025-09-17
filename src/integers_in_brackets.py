@@ -2,7 +2,8 @@
 import re
 
 def integers_in_brackets(s):
-    pass
+    m = re.findall(r'\[(\s?(?:\+?|-?)\d*\s?)\]', s)
+    return list(map(int, m))
     
     
 
@@ -10,10 +11,10 @@ def main():
     print(integers_in_brackets(" afd [asd] [12 ] [a34] [ -43 ]tt [+12]xxx")) 
     #Output for the above should be: [12, -43, 12]
 
-    print(integers_in_brackets("  afd [128+] [47 ] [a34]  [ +-43 ]tt [+12]xxx")
+    print(integers_in_brackets("  afd [128+] [47 ] [a34]  [ +-43 ]tt [+12]xxx"))
     #Output for the above should be: [47, 12]
     
-    print(integers_in_brackets("")
+    print(integers_in_brackets(""))
     #Output for the above should be: []
     
     
